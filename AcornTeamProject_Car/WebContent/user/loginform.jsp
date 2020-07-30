@@ -18,6 +18,8 @@
 body{
 	background:url('${pageContext.request.contextPath}/TPimage/join.jpeg')
 	no-repeat center fixed;
+
+	background-color:black;
 	background-size:cover;
 	}
 #ch{
@@ -59,6 +61,7 @@ body{
 			<form action="login.jsp" method="post">
 			<%-- 원래 가려던 목적지 정보를 url 이라는 파라미터 명으로 가지고 간다. --%>
             <input type="hidden" name="url" value="<%=url %>" />
+
 				<div class="form-group">
 					<label for="id">아이디</label><br />
 					<input type="text" class="form-control" name="id" id="id" />
