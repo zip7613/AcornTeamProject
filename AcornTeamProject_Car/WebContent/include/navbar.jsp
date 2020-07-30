@@ -22,9 +22,9 @@
         <a class="nav-link" href="#">정비소</a>
       </li>
       <li class="nav-item col-2" >
-        <a class="nav-link" href="#" style="
+        <a class="nav-link" href="${pageContext.request.contextPath}/cafe/list.jsp" style="
     height: 50px;
-    width: 100px;">자유게시판</a>
+    width: 100px;">Q&A</a>
       </li>
       <li class="nav-item dropdown col-2">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">차량 구입&견적</a>
