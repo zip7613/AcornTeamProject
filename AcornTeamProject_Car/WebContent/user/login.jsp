@@ -28,6 +28,7 @@
 <%if(isValid){ 
 	//로그인 처리를 한다. 
 	session.setAttribute("id", id);%>
+
 	<script>
 	alert("로그인 되었습니다.");
 	location.href="<%=url %>";
@@ -37,6 +38,7 @@
 	alert("아이디 혹은 비밀번호가 틀려요!");
 	location.href="loginform.jsp?url=<%=encodedUrl %>";
 	</script>
+
 <%} %>
 </body>
 </html>
