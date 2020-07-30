@@ -36,5 +36,6 @@
         </div>
       </li>
     </ul>
+    <a href="${pageContext.request.contextPath}/user/loginform.jsp" style="color:white; ">Login</a>
   </div>
 </nav>

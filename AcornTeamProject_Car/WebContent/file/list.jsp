@@ -9,9 +9,24 @@
 <head>
 <meta charset="UTF-8">
 <title>/file/list.jsp</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.css" />
+<!-- 아이콘 링크 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" />
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<style>
+	body{
+		background-color:black;
+	}
+	h1{
+		color:white;
+	}
+</style>
 </head>
 <body>
+<%@include file="../include/navbar.jsp" %>
 <% 
 	
 	//로그인 된 아이디 읽어오기 (로그인을 하지 않으면 null 이다)
@@ -93,10 +108,10 @@
 	<% if(session.getId().equals("gura")){ %>
 	<a href="private/upload_form.jsp">파일 업로드</a>
 	<%} %>
-	
+	<br /><br />
 	<h1>파일 목록입니다.</h1>
-	<table class="table table-striped table-sm">
-		<thead class="thead-dark">
+	<table class="table table-dark table-sm">
+		<thead>
 			<tr>
 				
 				<th>작성자</th>
@@ -155,5 +170,10 @@
 		<button type="submit">검색</button>
 	</form>
 </div>
+<div style="margin:0px 180px;">
+<%@include file="../include/footbox.jsp" %>
+</div>
+<br /><br /><br />
+<%@include file="../include/footer.jsp" %>
 </body>
 </html>
