@@ -141,35 +141,11 @@
 	  	</div>
 	</div>
 </div>
-<div class="bg-dark text-white" style="width:1550px; height:300px; padding:0px 44px; ">
-	<p>Main</p>
-	<hr width = "100%" color = "gray">
-	<p>Mercedes-Benz 소셜 웹:</p>
-	<a href="https://www.facebook.com/MercedesBenzKorea/" class="fa fa-facebook-official" style="font-size: 50px; margin:10px;" aria-hidden="true" ></a>
-	<a href="https://www.instagram.com/mercedesbenzkr/" class="fa fa-instagram" style="font-size: 50px; margin:10px;" aria-hidden="true"></a>
-	<a href="https://www.youtube.com/channel/UChbw0qKAMdFf6TlC0T3Z_zw" class="fa fa-youtube-play" style="font-size: 50px; margin:10px;" aria-hidden="true"></a>
-	
-	<script>
-	function goTop(){
-		$('html').scrollTop(0);
-		// scrollTop 메서드에 0 을 넣어서 실행하면 끝 !!
-		// 간혹 이 소스가 동작하지 않는다면
-		// $('html, body') 로 해보세요~
-	}
-	</script>
-</div>
+<%@include file="../include/footbox.jsp" %>
 
 </div><br/>
+<%@include file="../include/gotop.jsp" %>
 
-<div align="right">
-<button class="btn btn-dark" type="submit" onclick="goTop()" >맨 위로</button>
-</div></br>
-<p>&nbsp;&nbsp;&nbsp;©2020 메르세데스-벤츠 코리아(주) &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;메르세데스-벤츠 파이낸셜 서비스 코리아(주)
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;다임러 트럭 코리아(주)&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-메르세데스-벤츠 모빌리티 코리아(주)&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; 개인정보처리방침 (MBK)
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;개인정보처리방침 (MBFSK)&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-개인정보처리방침(MBMK)&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-개인정보처리방침(MmP)&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Mercedes-Benz AG Privacy Statement</p>
-
+<%@include file="../include/footer.jsp" %>
 </body>
 </html>
