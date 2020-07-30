@@ -90,9 +90,9 @@
 	}
 %>
 <div class="container">
-	<% if(session.getId().equals("gura")){ %>
+	
 	<a href="private/upload_form.jsp">파일 업로드</a>
-	<%} %>
+	
 	
 	<h1>파일 목록입니다.</h1>
 	<table class="table table-striped table-sm">
@@ -155,5 +155,6 @@
 		<button type="submit">검색</button>
 	</form>
 </div>
+<a href="${pageContext.request.contextPath}/main.jsp">main</a>
 </body>
 </html>
