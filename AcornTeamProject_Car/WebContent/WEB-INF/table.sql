@@ -20,3 +20,15 @@ CREATE TABLE board_file(
 );
 
 CREATE SEQUENCE board_file_seq;
+
+CREATE TABLE board_cafe(
+	num NUMBER PRIMARY KEY,
+	writer VARCHAR2(100) NOT NULL,
+	title VARCHAR2(100) NOT NULL,
+	content CLOB,
+	coment CLOB,
+	viewCount NUMBER, --조회수
+	regdate DATE
+);
+
+CREATE SEQUENCE board_cafe_seq;

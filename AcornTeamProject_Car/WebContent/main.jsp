@@ -41,7 +41,8 @@
 		</p>
 	<%} %>
 <div align="right">
-<a style="color:gray; margin:20px;"href="user/signupform.jsp">Mercedes me connect 회원가입</a>
+<a style="color:gainsboro; margin:20px;"href="user/signupform.jsp">Mercedes me connect 회원가입</a>
+
 </div>	   
 
 <%@include file="../include/navbar.jsp" %>

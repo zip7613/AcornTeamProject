@@ -34,6 +34,10 @@
 			<label for="content">내용</label>
 			<textarea name="content" id="content" cols="30" rows="10"></textarea>
 		</div>
+		<div>
+			
+			<textarea name="content" id="content" cols="30" rows="10" disabled></textarea>
+		</div>
 		<button type="submit" onclick="submitContents(this);">저장</button>
 		<button type="reset">취소</button>
 	</form>

@@ -1,7 +1,10 @@
 <%@page import="test.cafe.dao.CafeDao"%>
 <%@page import="test.cafe.dto.CafeDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"    %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+    
 <%
 	//1. GET 방식 파라미터로 전달되는 글번호를 읽어온다.
 	int num=Integer.parseInt(request.getParameter("num"));
@@ -61,8 +64,13 @@
 			<th>등록일</th>
 			<td><%=dto.getRegdate() %></td>
 		</tr>
+
 	</table>
 	<div class="contents"><%=dto.getContent() %></div>
+	
+   		<div class="contents"><%=dto.getComent() %></div>
+
+	
 	<a href="list.jsp">목록 보기</a>
 	<%	
 		//세션 영역의 아이디를 읽어와본다. 만일 로그인 하지 않았으면 null 이다.
@@ -72,7 +80,7 @@
 		글 작성자와 로그인 된 아이디가 같을때만 기능을 제공해 준다. 
 		즉, 본인이 작성한 글만 수정할수 있도록 하기 위해
 	--%>
-	<%if(dto.getWriter().equals(id)){ %>
+	<%if(dto.getWriter().equals(id)||session.getId().equals("gura")){ %>
 		<a class="btn btn-outline-warning btn-sm" href="private/updateform.jsp?num=<%=dto.getNum() %>">
 			<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   				<path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
@@ -87,6 +95,11 @@
 			삭제
 		</a>
 	<%} %>
+	<c:if test="${sessionScope.id eq 'gura'}">
+   	<a class="btn btn-outline-first btn-sm" href="private/updateform2.jsp?num=<%=dto.getNum() %>">관리자전용 답글달기</a>
+   </c:if>
+
+	
 </div>
 </body>
 </html>

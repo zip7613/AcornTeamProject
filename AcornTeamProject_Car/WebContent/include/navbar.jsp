@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div class="container" style="margin-left:70px;">
 	<h1 style="margin:0px;"><img src="${pageContext.request.contextPath}/images/black_icon.jpg" style="width:90px;"/>Mercedes-Benz</h1>
 </div>
@@ -36,6 +36,8 @@
         </div>
       </li>
     </ul>
-    <a href="${pageContext.request.contextPath}/user/loginform.jsp" style="color:white; ">Login</a>
+    <c:if test="${sessionScope.id eq null}">
+    	<a href="${pageContext.request.contextPath}/user/loginform.jsp" style="color:white; ">Login</a>
+   	</c:if>
   </div>
 </nav>

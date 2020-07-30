@@ -4,6 +4,7 @@
 <%@page import="test.file.dto.FileDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -105,9 +106,11 @@
    }
 %>
 <div class="container">
-   <% if(session.getId().equals("gura")){ %>
-   <a href="private/upload_form.jsp">파일 업로드</a>
-   <%} %>
+   <c:if test="${sessionScope.id eq 'gura'}">
+   	<a href="private/upload_form.jsp">파일 업로드</a>
+   </c:if>
+   
+   
    <br /><br />
    <h1>파일 목록입니다.</h1>
    <table class="table table-dark table-sm">

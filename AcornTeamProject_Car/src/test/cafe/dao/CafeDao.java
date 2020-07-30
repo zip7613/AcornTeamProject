@@ -18,6 +18,41 @@ public class CafeDao {
 		}
 		return dao;
 	}
+	//관리자가 글 (답글)수정하는 메소드
+		public boolean update2(CafeDto dto) {
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			int flag = 0;
+			try {
+				conn = new DbcpBean().getConn();
+				String sql = "UPDATE board_cafe"
+						+ " SET coment=?"
+						+ " WHERE num=?";
+				pstmt = conn.prepareStatement(sql);
+				// ? 에 값 바인딩 하기
+				pstmt.setString(1, dto.getComent());
+				pstmt.setInt(2, dto.getNum());
+				flag = pstmt.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					if (pstmt != null)
+						pstmt.close();
+					if (conn != null)
+						conn.close();
+				} catch (Exception e) {
+				}
+			}
+			if (flag > 0) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	
+	
+	
 	//글 정보를 수정하는 메소드
 	public boolean update(CafeDto dto) {
 		Connection conn = null;
@@ -94,7 +129,7 @@ public class CafeDao {
 			conn = new DbcpBean().getConn();
 			String sql = "SELECT result1.*"
 					+ " FROM"
-					+ "     (SELECT num,writer,title,content,viewCount,regdate,"
+					+ "     (SELECT num,writer,title,content,viewCount,regdate,coment,"
 					+ "      LAG(num,1,0) OVER (ORDER BY num DESC) AS prevNum,"
 					+ "      LEAD(num,1,0) OVER (ORDER BY num DESC) AS nextNum"
 					+ "      FROM board_cafe) result1"
@@ -113,6 +148,7 @@ public class CafeDao {
 				dto.setRegdate(rs.getString("regdate"));
 				dto.setPrevNum(rs.getInt("prevNum"));
 				dto.setNextNum(rs.getInt("nextNum"));
+				dto.setComent(rs.getString("coment"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
